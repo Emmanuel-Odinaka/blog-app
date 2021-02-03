@@ -58,7 +58,7 @@ exports.post_delete_post = function(req, res, next) {
 exports.post_update_get = function(req, res, next) {
         // Find the post you want to update
         console.log("ID is " + req.params.post_id);
-        models.Post.findByPk(
+        models.Post.findById(
                 req.params.post_id
         ).then(function(post) {
                // renders a post form
@@ -95,11 +95,11 @@ exports.post_update_post = function(req, res, next) {
 // Display detail page for a specific post.
 exports.post_detail = function(req, res, next) {
         // find a post by the primary key Pk
-        models.Post.findByPk(
+        models.Post.findById(
                 req.params.post_id
         ).then(function(post) {
         // renders an inividual post details page
-        res.render('pages/post_detail', { title: 'Post Details', post: post, layout: 'layouts/detail'} );
+        res.render('pages/post_detail', { title: 'Post Details', post: post, layout: 'layouts/main'} );
         console.log("Post deteials renders successfully");
         });
 };
@@ -112,7 +112,7 @@ exports.post_list = function(req, res, next) {
         ).then(function(posts) {
         // renders a post list page
         console.log("rendering post list");
-        res.render('pages/post_list', { title: 'Post List', posts: posts, layout: 'layouts/list'} );
+        res.render('pages/post_list', { title: 'Post List', posts: posts, layout: 'layouts/detail'} );
         console.log("Posts list renders successfully");
         });
         

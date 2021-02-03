@@ -3,7 +3,7 @@ var User = require('../models/user');
 // Display user create form on GET.
 exports.user_create_get = function(req, res, next) {
         // create user GET controller logic here 
-        res.render('forms/user_form', { title: 'Create User',  layout: 'layouts/detail'});
+        res.render('forms/user_form', { title: 'Create User',  layout: 'layouts/main'});
 };
 
 // Handle user create on POST.

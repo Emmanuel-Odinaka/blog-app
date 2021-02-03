@@ -1,4 +1,14 @@
-<%- include ('../partials/left-sidebar') %>
+<!-- <%- include ('../partials/left-sidebar') %>
 <%- include ('../partials/content') %>
 <%- include ('../partials/right-sidebar') %>
- 
+  -->
+
+  <div class="col-sm-8">    
+    <div class="">
+         <h1>Details of a Single post</h1>
+         <p>I am a post for this ID = <%= post.id %></p>
+         <p>Post Title: <%= post.post_title %></p>
+         <p>Post Body:  <%= post.post_body %></p>
+         <a href="/blog/post/<%= post.id %>/update">Edit  Post</a> | <a href="/blog/post/<%= post.id %>/delete">Delete Post</a>
+    </div>
+</div>
